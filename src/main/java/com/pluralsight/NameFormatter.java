@@ -9,8 +9,18 @@ public class NameFormatter {
     }
 
     public static String format(String prefix, String firstName, String middleName, String lastName, String suffix) {
-        if (prefix == null && middleName == null && suffix == null) {
+        String fullName = lastName + ", ";
+        if (prefix != "") {
+            fullName += prefix + " ";
         }
+        fullName += firstName;
+        if (middleName != "") {
+            fullName += middleName;
+        }
+        if (suffix != "") {
+            fullName += ", " + suffix;
+        }
+        return fullName;
     }
 
 }
